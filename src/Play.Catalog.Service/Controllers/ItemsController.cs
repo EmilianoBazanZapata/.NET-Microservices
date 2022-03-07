@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Play.Catalog.Service.Entities;
 using Play.Catalog.Service.Extensions;
+using Play.Catalog.Service.Interfaces;
 using Play.Catalog.Service.Repository;
 using static Play.Catalog.Service.Dtos.Dtos;
 
@@ -20,19 +21,23 @@ namespace Play.Catalog.Service.Controllers
         //     new ItemDto(Guid.NewGuid(), "Antidote", "Cures Poison", 7, DateTimeOffset.UtcNow),
         //     new ItemDto(Guid.NewGuid(), "Bronze Sword", "Deals a Small Amount of Damage", 20, DateTimeOffset.UtcNow),
         // };
-        private readonly ItemsRepository itemRepository = new();
+        private readonly IItemsRepository _itemRepository;
+        public ItemsController(IItemsRepository itemsRepository)
+        {
+            _itemRepository = itemsRepository;
+        }
         //metodo para leer todos los datos en la BD
         [HttpGet]
         public async Task<IEnumerable<ItemDto>> GetAllAsync()
         {
-            var items = (await itemRepository.GetAllAsync()).Select(item => item.AsDto());
+            var items = (await _itemRepository.GetAllAsync()).Select(item => item.AsDto());
             return items;
         }
         //metodo para buscar un item en particular
         [HttpGet("{Id}")]
         public async Task<ActionResult<ItemDto>> GetByIdAsync(Guid Id)
         {
-            var item = await itemRepository.GetAsync(Id);
+            var item = await _itemRepository.GetAsync(Id);
             if (item == null)
             {
                 return NotFound();
@@ -53,7 +58,7 @@ namespace Play.Catalog.Service.Controllers
                 Price = createItemDto.Price,
                 CreateDate = DateTimeOffset.UtcNow
             };
-            await itemRepository.CreateAsync(item);
+            await _itemRepository.CreateAsync(item);
             return CreatedAtAction(nameof(GetByIdAsync), new { Id = item.Id }, item);
         }
         [HttpPut("{Id}")]
@@ -73,7 +78,7 @@ namespace Play.Catalog.Service.Controllers
             // var index = items.FindIndex(ExistingItem => ExistingItem.Id == Id);
             // items[index] = UpdatedItem;
             // return NoContent();
-            var existingItem = await itemRepository.GetAsync(Id);
+            var existingItem = await _itemRepository.GetAsync(Id);
             if (existingItem == null)
             {
                 return NotFound();
@@ -82,7 +87,7 @@ namespace Play.Catalog.Service.Controllers
             existingItem.Description = updateItemDto.Description;
             existingItem.Price = updateItemDto.Price;
 
-            await itemRepository.UpdateAsync(existingItem);
+            await _itemRepository.UpdateAsync(existingItem);
             return NoContent();
         }
         [HttpDelete("{Id}")]
@@ -96,12 +101,12 @@ namespace Play.Catalog.Service.Controllers
             // items.RemoveAt(index);
             // return NoContent();
 
-            var item = await itemRepository.GetAsync(Id);
+            var item = await _itemRepository.GetAsync(Id);
             if (item == null)
             {
                 return NotFound();
             }
-            await itemRepository.RemoveAsync(item.Id);
+            await _itemRepository.RemoveAsync(item.Id);
             return NoContent();
         }
     }
