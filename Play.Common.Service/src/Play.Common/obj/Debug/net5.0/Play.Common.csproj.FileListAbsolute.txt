@@ -1,0 +1,12 @@
+C:\Users\Emilinao\Desktop\.NET Microservices\.NET-Microservices\Play.Common.Service\src\Play.Common\bin\Debug\net5.0\Play.Common.deps.json
+C:\Users\Emilinao\Desktop\.NET Microservices\.NET-Microservices\Play.Common.Service\src\Play.Common\bin\Debug\net5.0\Play.Common.dll
+C:\Users\Emilinao\Desktop\.NET Microservices\.NET-Microservices\Play.Common.Service\src\Play.Common\bin\Debug\net5.0\Play.Common.pdb
+C:\Users\Emilinao\Desktop\.NET Microservices\.NET-Microservices\Play.Common.Service\src\Play.Common\obj\Debug\net5.0\Play.Common.csproj.AssemblyReference.cache
+C:\Users\Emilinao\Desktop\.NET Microservices\.NET-Microservices\Play.Common.Service\src\Play.Common\obj\Debug\net5.0\Play.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Emilinao\Desktop\.NET Microservices\.NET-Microservices\Play.Common.Service\src\Play.Common\obj\Debug\net5.0\Play.Common.AssemblyInfoInputs.cache
+C:\Users\Emilinao\Desktop\.NET Microservices\.NET-Microservices\Play.Common.Service\src\Play.Common\obj\Debug\net5.0\Play.Common.AssemblyInfo.cs
+C:\Users\Emilinao\Desktop\.NET Microservices\.NET-Microservices\Play.Common.Service\src\Play.Common\obj\Debug\net5.0\Play.Common.csproj.CoreCompileInputs.cache
+C:\Users\Emilinao\Desktop\.NET Microservices\.NET-Microservices\Play.Common.Service\src\Play.Common\obj\Debug\net5.0\Play.Common.dll
+C:\Users\Emilinao\Desktop\.NET Microservices\.NET-Microservices\Play.Common.Service\src\Play.Common\obj\Debug\net5.0\refint\Play.Common.dll
+C:\Users\Emilinao\Desktop\.NET Microservices\.NET-Microservices\Play.Common.Service\src\Play.Common\obj\Debug\net5.0\Play.Common.pdb
+C:\Users\Emilinao\Desktop\.NET Microservices\.NET-Microservices\Play.Common.Service\src\Play.Common\obj\Debug\net5.0\ref\Play.Common.dll
