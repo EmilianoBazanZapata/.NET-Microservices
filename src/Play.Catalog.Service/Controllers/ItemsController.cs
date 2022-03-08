@@ -21,8 +21,8 @@ namespace Play.Catalog.Service.Controllers
         //     new ItemDto(Guid.NewGuid(), "Antidote", "Cures Poison", 7, DateTimeOffset.UtcNow),
         //     new ItemDto(Guid.NewGuid(), "Bronze Sword", "Deals a Small Amount of Damage", 20, DateTimeOffset.UtcNow),
         // };
-        private readonly IItemsRepository _itemRepository;
-        public ItemsController(IItemsRepository itemsRepository)
+        private readonly IRepository<Item> _itemRepository;
+        public ItemsController(IRepository<Item> itemsRepository)
         {
             _itemRepository = itemsRepository;
         }
